@@ -30,6 +30,9 @@ export default () => {
     const [passwordField, setPasswordField] = useState('');
 
     const handleSignClick = async () => {
+        navigation.reset({
+            routes:[{name:'MainTab'}]
+        });
         if(emailField != '' && passwordField != '') {
 
             let json = await Api.signIn(emailField, passwordField);
